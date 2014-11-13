@@ -14,6 +14,7 @@
 		BD81D15119FFB92C0065E9A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD81D15019FFB92C0065E9A2 /* Images.xcassets */; };
 		BD81D15419FFB92C0065E9A2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD81D15219FFB92C0065E9A2 /* LaunchScreen.xib */; };
 		BD81D16019FFB92C0065E9A2 /* HighLitesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD81D15F19FFB92C0065E9A2 /* HighLitesTests.m */; };
+		BD81D16A1A08F02C0065E9A2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD81D1691A08F02C0065E9A2 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		BD81D15919FFB92C0065E9A2 /* HighLitesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HighLitesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD81D15E19FFB92C0065E9A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD81D15F19FFB92C0065E9A2 /* HighLitesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HighLitesTests.m; sourceTree = "<group>"; };
+		BD81D1691A08F02C0065E9A2 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD81D16A1A08F02C0065E9A2 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +66,7 @@
 		BD81D13719FFB92B0065E9A2 = {
 			isa = PBXGroup;
 			children = (
+				BD81D1691A08F02C0065E9A2 /* MediaPlayer.framework */,
 				BD81D14219FFB92C0065E9A2 /* HighLites */,
 				BD81D15C19FFB92C0065E9A2 /* HighLitesTests */,
 				BD81D14119FFB92C0065E9A2 /* Products */,
@@ -412,6 +416,7 @@
 				BD81D16519FFB92C0065E9A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BD81D16619FFB92C0065E9A2 /* Build configuration list for PBXNativeTarget "HighLitesTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +425,7 @@
 				BD81D16819FFB92C0065E9A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,20 +8,33 @@
 
 #import "ViewController.h"
 
+
 @interface ViewController ()
+
 
 @end
 
 @implementation ViewController
+@synthesize movieplayer;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    NSURL *url = [[NSURL alloc]initWithString:@"http://storage.googleapis.com/manc-vs-newctle/Manchester%20City%20vs%20Newcastle%20United%200-2-iphonepod.mp4"];
+    
+    movieplayer = [[MPMoviePlayerController alloc]initWithContentURL:url];
+    
+    [movieplayer.view setFrame:CGRectMake(30, 100, 380, 150)];
+    
+    [self.view addSubview:movieplayer.view];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+    // Dispose of any resources that can be recreated
 
+    
+    
+
+    
+}
 @end
