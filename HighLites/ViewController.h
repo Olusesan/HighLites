@@ -11,7 +11,8 @@
 
 @interface ViewController : UIViewController
 
-@property (nonatomic, strong) MPMoviePlayerController *movieplayer;
+@property (nonatomic, strong) MPMoviePlayerController *moviePlayer;
+@property (nonatomic, strong) NSURL *videoUrl;
 
 
 @end

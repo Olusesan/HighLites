@@ -15,17 +15,39 @@
 @end
 
 @implementation ViewController
-@synthesize movieplayer;
+@synthesize videoUrl;
+@synthesize moviePlayer;
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    NSURL *url = [[NSURL alloc]initWithString:@"http://storage.googleapis.com/manc-vs-newctle/Manchester%20City%20vs%20Newcastle%20United%200-2-iphonepod.mp4"];
+    videoUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://movies.apple.com/media/us/mac/getamac/2009/apple-mvp-biohazard_suit-us-20090419_480x272.mov"]];
+    if(videoUrl) {
+        
+        if([videoUrl scheme]) {
+            
+            [self playVideoStream:videoUrl];
+        }
+    }
+}
+
+-(void)playVideoStream:(NSURL *)movieFileURL {
     
-    movieplayer = [[MPMoviePlayerController alloc]initWithContentURL:url];
+    MPMovieSourceType movieSourceType = MPMovieSourceTypeUnknown;
+    /* If we have a streaming url then specify the movie source type. */
+    if ([[movieFileURL pathExtension] compare:@"mov" options:NSCaseInsensitiveSearch] == NSOrderedSame)
+    {
+        movieSourceType = MPMovieSourceTypeStreaming;
+    }
+    [self createAndPlayMovieForURL:movieFileURL sourceType:movieSourceType];
+}
+
+-(void)createAndPlayMovieForURL:(NSURL *)movieURL sourceType:(MPMovieSourceType)sourceType {
     
-    [movieplayer.view setFrame:CGRectMake(30, 100, 380, 150)];
-    
-    [self.view addSubview:movieplayer.view];
+    /* Play the video! */
+    [moviePlayer setMovieSourceType:sourceType];
+    moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:movieURL];;
+    moviePlayer.view.frame = CGRectMake(10, 20, 280, 210);
+    [self.view addSubview:moviePlayer.view];
+    [moviePlayer play];
 }
 
 - (void)didReceiveMemoryWarning {
